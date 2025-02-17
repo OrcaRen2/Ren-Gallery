@@ -100,7 +100,7 @@ main p {
 /* Section 1: 創作理念介紹 */
 #pokemon-concept {
     padding: 30px;
-    background-color: #14375d;
+    background-color: #0b2846;
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -108,7 +108,7 @@ main p {
 /* Section 2: 作品展示 */
 #pokemon-gallery {
     padding: 30px;
-    background-color: #0b2846
+    background-color: #14375d;
 }
 .gallery-grid {
     display: grid;

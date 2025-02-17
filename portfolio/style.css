@@ -90,8 +90,9 @@ main a{
 .gallery-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 50px;
+    padding: 50px;
+    justify-content: space-around;
 }
 
 .category {
@@ -117,7 +118,11 @@ main a{
     color: rgb(125, 185, 240);
 }
 
-
+.category p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgb(180, 190, 200);
+}
 
 
 

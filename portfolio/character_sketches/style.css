@@ -1,0 +1,198 @@
+* { /* 重置遊覽器預設樣式 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{ /* 設定頂端列樣式 */
+    background-color: rgba(0, 15, 30, 0.7);
+    height: 20vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between; /* 預設兩端對齊 */
+    align-items: center;
+}
+.logo-link img {
+    height: 20vh; /* 圖片高度填滿 header */
+}
+
+h1{ /* 隱藏標題 */
+    position: absolute;
+    text-indent: -9999px;
+}
+
+header ul{  /* 設定選單樣式 */
+    position: absolute;
+    right:0;
+    top:0;
+    line-height: 20vh;
+    display: flex;
+}
+header li{  /* 設定選單項目樣式 */
+    display: inline;
+    margin-right: 5vw;
+    list-style-type: none;
+    font-size: 1.2em;
+}
+
+header a{   /* 設定選單連結樣式 */
+    color: rgb(88, 139, 197);
+    text-decoration: none;
+    margin: 0 10px;
+}
+header a:hover{ /* 設定選單連結滑鼠移入樣式 */
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    display: none; /* 預設隱藏 */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;  /* 使用絕對定位 */
+    right: 10px;  /* 距離右邊 10px */
+    top: 50%;  /* 垂直居中 */
+    transform: translateY(-50%); /* 完全居中 */
+    z-index: 101;
+}
+.menu-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(88, 139, 197);
+}
+header ul.active {
+    width: 200px; /* 調整選單寬度 */
+    padding: 10px; /* 調整選單內邊距 */
+    font-size: 0.9em; /* 調整選單文字大小 */
+    top: 10vh; /* 確保選單位置正確 */
+    background-color: rgba(0, 15, 30, 0.9); /* 選單背景顏色 */
+}
+
+header ul.active li {
+    margin: 10px 0; /* 調整選單項目間距 */
+}
+
+main {
+    padding-top: 20vh; /* 確保主內容距離頂端列足夠遠 */
+    background-color: #14375d
+}
+
+main a{
+    text-decoration: none;
+}
+
+main h2 {
+    padding: 10px;
+    color: rgb(88, 139, 197)
+}
+
+main p {
+    padding: 10px;
+    color: white;
+}
+
+/* Section 1: 創作理念介紹 */
+#pokemon-concept {
+    padding: 30px;
+    background-color: #0b2846;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Section 2: 作品展示 */
+#pokemon-gallery {
+    padding: 30px;
+    background-color: #14375d;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    gap: 20px;
+    justify-content: space-around;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+footer{ /* 設定頁尾樣式 */
+    background-color: #0b2846;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(180, 190, 200);
+    font-size: 0.5em;
+}
+
+/* 響應式設計語法 */
+@media screen and (max-width: 768px) {
+    header{ /* 設定頂端列樣式 */
+        background-color: rgba(0, 15, 30, 0.7); /* 保持與大螢幕相同的背景顏色 */
+        display: flex;
+        height: 10vh;
+        justify-content: center;
+        position: fixed;  /* 使漢堡選單絕對定位 */
+    }
+    header ul{ /* 設定選單樣式 */
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 15, 30, 0.5); /* 選單背景 */
+        position: absolute;
+        right: 0px;
+        top: 50%; /* 讓選單顯示在 LOGO 下方 */
+        width: 100%;
+        text-align: center;
+    }
+    header ul.active {
+        display: flex; /* 展開選單時顯示 */
+    }
+
+    .menu-toggle { /* 顯示漢堡選單 */
+        display: flex;
+    }
+    header ul.active {
+        display: flex;
+    }
+    .logo-link img{
+        height: 10vh;
+    }
+
+    main {
+        padding-top: 10vh; /* 在小螢幕上適當減少間距 */
+    }
+
+
+
+
+
+
+}
+
+
+@media screen and (min-width: 769px) {
+    header ul {
+        display: flex; /* 大螢幕下顯示選單 */
+        position: static; /* 恢復預設位置 */
+        background-color: transparent; /* 移除背景顏色 */
+    }
+
+    .menu-toggle {
+        display: none; /* 隱藏漢堡選單 */
+    }
+}
